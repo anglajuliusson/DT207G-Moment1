@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 
 app.set("view engine", "ejs"); // View engine: EJS
+app.use(express.static("public")); // Statiska filer
 
 // Route
 app.get("/", (req, res) => {
