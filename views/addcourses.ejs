@@ -40,6 +40,29 @@
             </ul>
             </nav>
     </header>
+    <main>
+        <h2>Lägg till kurs</h2>
+        <form>
+            <label for="coursecode">Kurskod:</label>
+            <input type="text" id="coursecode" name="coursecode">
+            <br>
+            <label for="coursename">Kursnamn:</label>
+            <input type="text" id="coursename" name="coursename">
+            <br>
+            <label for="syllabus">Länk till kursplan:</label>
+            <input type="text" id="syllabus" name="syllabus">
+            <br>
+            <label for="progression">progression:</label>
+            <select id="progression" name="progression">
+                <option value="Välj progression">Välj progression</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+            <br>
+            <input type="submit" value="Lägg till ny kurs">
+        </form>
+    </main>
     <script src="/js/main.js"></script>
 </body>
 </html>
