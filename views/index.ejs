@@ -40,6 +40,19 @@
             </ul>
             </nav>
     </header>
+    <main>
+        <h2>Kurser</h2>
+
+        <% if (courseList.length > 0) { %>
+            <% courseList.forEach ((course) => { %>
+                <article>
+                    <h3><%= course.coursename %></h3>
+                </article>
+            <% }) %>
+        <% } else { %>
+            <p>Inga kurser finns i listan...</p>
+        <% } %>
+    </main>
     <script src="/js/main.js"></script>
 </body>
 </html>

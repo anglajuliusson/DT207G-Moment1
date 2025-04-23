@@ -11,7 +11,12 @@ app.use(express.static("public")); // Statiska filer
 
 // Routing
 app.get("/", (req, res) => {
-    res.render("index") // Startsida
+    const courseList = [
+        {
+            coursename: "Backendutveckling"
+        }
+    ];
+    res.render("index", {courseList}); // Startsida och kurslista
 });
 
 app.get("/addcourses", (req, res) => {
