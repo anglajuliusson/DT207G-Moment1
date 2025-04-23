@@ -9,9 +9,17 @@ const port = 3000;
 app.set("view engine", "ejs"); // View engine: EJS
 app.use(express.static("public")); // Statiska filer
 
-// Route
+// Routing
 app.get("/", (req, res) => {
-    res.send("Hello from Express!")
+    res.render("index") // Startsida
+});
+
+app.get("/addcourses", (req, res) => {
+    res.render("addcourses") // "Lägg till kurser"-sidan
+});
+
+app.get("/about", (req, res) => {
+    res.render("about") // "Om webbplatsen"-sidan
 });
 
 // Starta
