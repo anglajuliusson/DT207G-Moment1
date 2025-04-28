@@ -42,7 +42,7 @@
             </nav>
     </header>
     <main>
-        <h2>Kurser</h2>
+        <h2 class="courseheader">Kurser</h2>
 
         <% if (courseList.length > 0) { %>
             <% courseList.forEach ((course) => { %>
@@ -55,7 +55,7 @@
         <% } %>
 
         <p>
-            <a href="/addcourses">Lägg till ny kurs</a>
+            <a class="addbuttonlink" href="/addcourses">Lägg till ny kurs</a>
         </p>
     </main>
     <footer>
