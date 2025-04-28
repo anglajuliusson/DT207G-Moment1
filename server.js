@@ -25,6 +25,17 @@ app.get("/addcourses", (req, res) => {
     res.render("addcourses") // "Lägg till kurser"-sidan
 });
 app.post ("/addcourses", (req, res) => {
+
+        console.log(req.body);
+        console.log("Formuläret mottogs!")
+        // Läs in forumlärdata
+        let newCode = req.body.coursecode;
+        let newName = req.body.coursename;
+        let newSyllabus = req.body.syllabus;
+        let newProgression = req.body.progression;
+
+        console.log(newCode, newName, newSyllabus, newProgression);
+
     res.render("addcourses") 
 });
 
