@@ -42,18 +42,25 @@
             </nav>
     </header>
     <main>
-        <h2>Lägg till kurs</h2>
-        <p>Fyll i formuläret nedan för att lägga till en kurs</p>
-        <form>
+        <h2 class="addheader">Lägg till kurs</h2>
+        <p class="whattodo">Fyll i formuläret nedan för att lägga till en kurs</p>
+        <form class="addcourseform">
+            <div class="coursecode">
             <label for="coursecode">Kurskod:</label>
             <input type="text" id="coursecode" name="coursecode">
+            </div>
             <br>
+            <div class="coursename">
             <label for="coursename">Kursnamn:</label>
             <input type="text" id="coursename" name="coursename">
+            </div>
             <br>
+            <div class="syllabus">
             <label for="syllabus">Länk till kursplan:</label>
             <input type="text" id="syllabus" name="syllabus">
+            </div>
             <br>
+            <div class="progression">
             <label for="progression">Progression:</label>
             <select id="progression" name="progression">
                 <option value="Välj progression">Välj progression</option>
@@ -61,6 +68,7 @@
                 <option value="B">B</option>
                 <option value="C">C</option>
             </select>
+            </div>
             <br>
             <input class="addbutton" type="submit" value="Lägg till ny kurs">
         </form>
