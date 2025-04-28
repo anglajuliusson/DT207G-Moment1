@@ -26,8 +26,6 @@ app.get("/addcourses", (req, res) => {
 });
 app.post ("/addcourses", (req, res) => {
 
-        console.log(req.body);
-        console.log("Formuläret mottogs!")
         // Läs in forumlärdata
         let newCode = req.body.coursecode;
         let newName = req.body.coursename;
@@ -35,7 +33,8 @@ app.post ("/addcourses", (req, res) => {
         let newProgression = req.body.progression;
 
         console.log(newCode, newName, newSyllabus, newProgression);
-
+        console.log(req.body);
+        console.log("Formuläret mottogs!");
     res.render("addcourses") 
 });
 
