@@ -3,11 +3,13 @@
  */
 
 const express = require("express");
+const bodyParser = require("body-parser"); // Möjlighet att läsa in form-data
 const app = express();
 const port = 3000;
 
 app.set("view engine", "ejs"); // View engine: EJS
 app.use(express.static("public")); // Statiska filer
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Routing
 app.get("/", (req, res) => {
@@ -21,6 +23,9 @@ app.get("/", (req, res) => {
 
 app.get("/addcourses", (req, res) => {
     res.render("addcourses") // "Lägg till kurser"-sidan
+});
+app.post ("/addcourses", (req, res) => {
+    res.render("addcourses") 
 });
 
 app.get("/about", (req, res) => {
