@@ -151,8 +151,32 @@ main {
     align-items: center;
     text-align: center;
 }
+table {
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 224, 235);
+    padding: 1em;
+    margin: auto;
+    border-radius: 10px;
+}
+th, td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid palevioletred;
+  }
+  
+th {
+    text-align: left;
+    cursor: pointer;
+  }
+td a {
+    color: palevioletred !important;
+}
 .addheader, .courseheader {grid-area: addheader;margin-top: 2em; }
-.whattodo {grid-area: whattodo;}
+.whattodo {
+    grid-area: whattodo;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
 .addcourseform {
     grid-area: form;
     display: grid;
@@ -166,7 +190,14 @@ main {
     justify-content: center;
     align-items: center;
     text-align: left;
-    margin: 2em;
+}
+.addCourse {
+    background-color: rgb(255, 224, 235);
+    border-radius: 10px;
+    padding: 1em;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
 }
 .coursecode {
     grid-area: code;
@@ -188,7 +219,7 @@ main {
     grid-area: button;
     width: 170px;
     height: 40px;
-    margin: 0 auto; 
+    margin: auto; 
     display: block;
     background-color: rgb(210, 94, 132);
     font-size: medium;
@@ -220,6 +251,7 @@ footer {
     align-items: center;
     text-align: center;
     padding: 2em;
+    margin-top: 3em;
 }
 }
 
@@ -268,6 +300,26 @@ footer {
         align-items: center;
         text-align: center;
     }
+    table {
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 224, 235);
+        padding: 1em;
+        margin: auto;
+        border-radius: 10px;
+    }
+    th, td {
+        padding: 0.6rem 0.8rem;
+        border-bottom: 1px solid palevioletred;
+      }
+      
+    th {
+        text-align: left;
+        cursor: pointer;
+      }
+    td a {
+        color: palevioletred !important;
+    }
     .addheader {grid-area: addheader; margin-top: 2em; }
     .whattodo {grid-area: whattodo;}
     .addcourseform {
@@ -284,6 +336,14 @@ footer {
         align-items: center;
         text-align: left;
         margin: 2em;
+    }
+    .addCourse {
+        background-color: rgb(255, 224, 235);
+        border-radius: 10px;
+        padding: 1em;
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
     }
     .coursecode {
         grid-area: code;
@@ -310,6 +370,7 @@ footer {
         background-color: rgb(210, 94, 132);
         font-size: medium;
         border: 2px solid rgb(210, 94, 132);
+        border-radius: 5px;
     }
     .addbuttonlink { 
         grid-area: button;
@@ -335,6 +396,7 @@ footer {
         align-items: center;
         text-align: center;
         padding: 2em;
+        margin-top: 3em;
     }
 }
 
@@ -388,6 +450,26 @@ footer {
         align-items: center;
         text-align: center;
     }
+    table {
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 224, 235);
+        padding: 1em;
+        margin: auto;
+        border-radius: 10px;
+    }
+    th, td {
+        padding: 0.6rem 0.8rem;
+        border-bottom: 1px solid palevioletred;
+      }
+      
+    th {
+        text-align: left;
+        cursor: pointer;
+      }
+    td a {
+        color: palevioletred !important;
+    }
     .addheader {grid-area: addheader; margin-top: 2em; }
     .whattodo {grid-area: whattodo;}
     .addcourseform {
@@ -404,6 +486,14 @@ footer {
         align-items: center;
         text-align: left;
         margin: 2em;
+    }
+    .addCourse {
+        background-color: rgb(255, 224, 235);
+        border-radius: 10px;
+        padding: 1em;
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
     }
     .coursecode {
         grid-area: code;
@@ -430,6 +520,7 @@ footer {
         background-color: rgb(210, 94, 132);
         font-size: medium;
         border: 2px solid rgb(210, 94, 132);
+        border-radius: 5px;
     }
     .addbuttonlink { 
         grid-area: button;
@@ -456,5 +547,6 @@ footer {
         text-align: center;
         padding: 2em;
         font-size: small;
+        margin-top: 3em;
     }
 }
