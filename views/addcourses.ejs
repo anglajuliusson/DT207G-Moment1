@@ -46,7 +46,7 @@
         <div class="addCourse">
         <p class="whattodo">Fyll i formuläret nedan för att lägga till en kurs</p>
         <% if(locals.errors.length > 0) { %>
-            <ul>
+            <ul class="errors">
                 <% errors.forEach((error)=> { %>
                     <li>
                         <%= error %>

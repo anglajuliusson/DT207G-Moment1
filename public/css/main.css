@@ -105,7 +105,23 @@ footer {
         top: -3px;
     }
     }
-
+/* Felmeddelanden */
+.errors {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e74c3c;
+    background-color: #fcebea;
+    color: #c0392b;
+    border-radius: 5px;
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  
+  .errors li {
+    margin: 0.25rem 0;
+    list-style-type: none;
+  }
+  
 @media (min-width: 1025px) {
 .menu-btn {display: none;} /* Dölj knapp*/
 .mobilmenu {display: none;} /* Dölj mobilmenu*/
