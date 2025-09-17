@@ -19,7 +19,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/addcourses", (req, res) => {
-    res.render("addcourses") // "Lägg till kurser"-sidan
+    res.render("addcourses", {
+        errors: []
+    })
 });
 app.post ("/addcourses", (req, res) => {
 
@@ -29,9 +31,26 @@ app.post ("/addcourses", (req, res) => {
         let newSyllabus = req.body.syllabus;
         let newProgression = req.body.progression;
 
+        let errors = [];
+
         console.log(newCode, newName, newSyllabus, newProgression);
         console.log(req.body);
         console.log("Formuläret mottogs!");
+
+        // Validera input och felmeddelanden
+        if (newCode === "") {
+            errors.push("Ange korrekt kurskod");
+        }
+        if (newName === "") {
+            errors.push("Ange korrekt kursnamn");
+        }
+        if (newProgression === "" || newProgression === "Välj progression") {
+            errors.push("Ange korrekt progression");
+        }
+        if (errors.length > 0) {
+            // Fel -> visa forumuläret igen med felmeddelande
+            return res.render("addcourses", {errors});
+        }
 
         // Lägg till i arrayen
         courseList.push ({
@@ -41,7 +60,9 @@ app.post ("/addcourses", (req, res) => {
             progression: newProgression
         });
 
-        res.redirect("/") // Skickas till startsidan efter att man fyllt i formulär
+        // Skickas till startsidan efter att man fyllt i formulär korrekt
+        res.redirect("/", {
+        });
 });
 
 app.get("/about", (req, res) => {

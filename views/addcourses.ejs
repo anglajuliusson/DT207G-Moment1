@@ -45,6 +45,15 @@
         <h2 class="addheader">Lägg till kurs</h2>
         <div class="addCourse">
         <p class="whattodo">Fyll i formuläret nedan för att lägga till en kurs</p>
+        <% if(locals.errors.length > 0) { %>
+            <ul>
+                <% errors.forEach((error)=> { %>
+                    <li>
+                        <%= error %>
+                    </li>
+                    <% }); %>
+            </ul>
+        <% } %>
         <form class="addcourseform" method="post" action="/addcourses">
             <div class="coursecode">
             <label for="coursecode">Kurskod:</label>
