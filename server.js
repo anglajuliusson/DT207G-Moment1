@@ -6,6 +6,8 @@ const express = require("express");
 const bodyParser = require("body-parser"); // Möjlighet att läsa in form-data
 const app = express();
 const port = 3000;
+// Global array med lista för kurser
+const courseList = [];
 
 app.set("view engine", "ejs"); // View engine: EJS
 app.use(express.static("public")); // Statiska filer
@@ -13,11 +15,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Routing
 app.get("/", (req, res) => {
-    const courseList = [ // Lista för kurser
-        {
-            coursename: "Backendutveckling"
-        }
-    ];
     res.render("index", {courseList}); // Startsida och kurslista
 });
 
@@ -35,7 +32,16 @@ app.post ("/addcourses", (req, res) => {
         console.log(newCode, newName, newSyllabus, newProgression);
         console.log(req.body);
         console.log("Formuläret mottogs!");
-    res.render("addcourses") 
+
+        // Lägg till i arrayen
+        courseList.push ({
+            coursecode: newCode,
+            coursename: newName,
+            syllabus: newSyllabus,
+            progression: newProgression
+        });
+
+        res.redirect("/") // Skickas till startsidan efter att man fyllt i formulär
 });
 
 app.get("/about", (req, res) => {
