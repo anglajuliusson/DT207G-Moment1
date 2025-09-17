@@ -71,13 +71,7 @@ app.post ("/addcourses", (req, res) => {
         });
 
         // Skickas till startsidan efter att man fyllt i formulär korrekt
-        res.redirect("/", {
-
-            newCode: newCode,
-            newName: newName,
-            newSyllabus: newSyllabus,
-            newProgression: newProgression
-        });
+        res.redirect("/");
 });
 
 app.get("/about", (req, res) => {
