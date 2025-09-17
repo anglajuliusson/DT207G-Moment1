@@ -57,22 +57,22 @@
         <form class="addcourseform" method="post" action="/addcourses">
             <div class="coursecode">
             <label for="coursecode">Kurskod:</label>
-            <input type="text" id="coursecode" name="coursecode">
+            <input type="text" id="coursecode" name="coursecode" value="<%= newCode %>">
             </div>
             <br>
             <div class="coursename">
             <label for="coursename">Kursnamn:</label>
-            <input type="text" id="coursename" name="coursename">
+            <input type="text" id="coursename" name="coursename" value="<%= newName %>">
             </div>
             <br>
             <div class="syllabus">
             <label for="syllabus">Länk till kursplan:</label>
-            <input type="text" id="syllabus" name="syllabus">
+            <input type="text" id="syllabus" name="syllabus" value="<%= newSyllabus %>">
             </div>
             <br>
             <div class="progression">
             <label for="progression">Progression:</label>
-            <select id="progression" name="progression">
+            <select id="progression" name="progression" value="<%= newProgression %>">
                 <option value="Välj progression">Välj progression</option>
                 <option value="A">A</option>
                 <option value="B">B</option>

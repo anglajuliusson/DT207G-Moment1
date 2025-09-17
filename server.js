@@ -20,7 +20,11 @@ app.get("/", (req, res) => {
 
 app.get("/addcourses", (req, res) => {
     res.render("addcourses", {
-        errors: []
+        errors: [],
+        newCode: "",
+        newName: "",
+        newSyllabus: "",
+        newProgression: ""
     })
 });
 app.post ("/addcourses", (req, res) => {
@@ -49,7 +53,13 @@ app.post ("/addcourses", (req, res) => {
         }
         if (errors.length > 0) {
             // Fel -> visa forumuläret igen med felmeddelande
-            return res.render("addcourses", {errors});
+            return res.render("addcourses", {
+                errors,
+                newCode,
+                newName,
+                newProgression,
+                newSyllabus
+            });
         }
 
         // Lägg till i arrayen
@@ -62,6 +72,11 @@ app.post ("/addcourses", (req, res) => {
 
         // Skickas till startsidan efter att man fyllt i formulär korrekt
         res.redirect("/", {
+
+            newCode: newCode,
+            newName: newName,
+            newSyllabus: newSyllabus,
+            newProgression: newProgression
         });
 });
 
