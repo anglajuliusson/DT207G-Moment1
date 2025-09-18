@@ -187,7 +187,7 @@ th {
 td a {
     color: palevioletred !important;
 }
-.addheader, .courseheader {grid-area: addheader;margin-top: 2em; }
+.addheader, .courseheader, .aboutheader {grid-area: addheader;margin-top: 2em; }
 .whattodo {
     grid-area: whattodo;
     font-weight: bold;
@@ -259,6 +259,15 @@ td a {
     align-items: center;
     justify-content: center; 
     margin-bottom: 2em;
+}
+.about {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    padding: 2em;
+}
+.about p {
+    text-align: left;
 }
 footer {
     width: 100vw;
@@ -404,6 +413,15 @@ footer {
         align-items: center;
         justify-content: center; 
         margin-bottom: 2em;
+    }
+    .about {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+        padding: 2em;
+    }
+    .about p {
+        text-align: left;
     }
     footer {
         width: 100vw;
@@ -554,6 +572,16 @@ footer {
         align-items: center;
         justify-content: center; 
         margin-bottom: 2em;
+    }
+    .about {
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+        padding: 1em;
+    }
+    .about p {
+        text-align: left;
+        font-size: small;
     }
     footer {
         width: 100vw;

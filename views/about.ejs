@@ -41,6 +41,31 @@
             </ul>
             </nav>
     </header>
+    <main>
+        <h2 class="aboutheader">Om webbplatsen</h2>
+        <div class="about">
+            <p>Denna webbplats visar hur man kan bygga och hantera en kursdatabas 
+                med hjälp av Node.js, Express och MySQL. Syftet med sidan är att 
+                visa hur man kan skapa en databas för kurser, lägga till nya kurser 
+                via ett webbformulär samt visa alla sparade kurser på en översiktssida. 
+                Webbplatsen använder server-side rendering med EJS, vilket innebär att 
+                innehållet genereras dynamiskt på servern innan det skickas till användarens 
+                webbläsare.</p>
+            <p>Databasen som används är MySQL med namnet dt207g_courses. All kursinformation 
+                lagras i tabellen courses, som innehåller kolumnerna id, coursecode, coursename, 
+                syllabus samt progression. Denna struktur gör det möjligt att spara, hämta och 
+                visa kursdata på ett organiserat sätt, och säkerställer att informationen är 
+                konsekvent och lättåtkomlig via webbgränssnittet.</p>
+            <p>Genom denna uppgift har jag lärt mig vikten av att användarinmatningen måste 
+                kontrolleras på serversidan innan den sparas i databasen. Har också fått se att 
+                server-sida rendering med EJS fungerar bra för dynamisk data med inte för 
+                publicering på nätet, dr krävs en host som stöder Node.js och en MySQL-databas 
+                som är åtkomlig via nätverkeet.</p>
+            <p>Sammanfattnignsvis så har denna uppgift gett praktist erfarenhet av att bygga en 
+                webbplats med datastöd, formulärhantering och dynamisk visning av information. 
+                Jag har även fått isnikt i både teknikval och design av databaser och webbapplikationer.</p>
+        </div>
+    </main>
     <footer>
         <p>DT207G Backendbaserad webbutveckling | anju2402, Ängla Juliusson | VT2025</p>
     </footer>
