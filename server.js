@@ -6,8 +6,10 @@ const express = require("express");
 const bodyParser = require("body-parser"); // Möjlighet att läsa in form-data
 const app = express();
 const port = 3000;
+const db = require("./install"); 
+
 // Global array med lista för kurser
-const courseList = [];
+//const courseList = [];
 
 app.set("view engine", "ejs"); // View engine: EJS
 app.use(express.static("public")); // Statiska filer
@@ -15,7 +17,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Routing
 app.get("/", (req, res) => {
-    res.render("index", {courseList}); // Startsida och kurslista
+    db.query("SELECT * FROM courses", (err, results) => {
+        if (err) {
+            console.error("Error fetching courses: " + err);
+            return res.render("index", { courseList: [] });
+        }
+        res.render("index", { courseList: results });
+    });
 });
 
 app.get("/addcourses", (req, res) => {
@@ -62,16 +70,18 @@ app.post ("/addcourses", (req, res) => {
             });
         }
 
-        // Lägg till i arrayen
-        courseList.push ({
-            coursecode: newCode,
-            coursename: newName,
-            syllabus: newSyllabus,
-            progression: newProgression
-        });
-
+        const sql = "INSERT INTO courses (coursecode, coursename, syllabus, progression) VALUES (?, ?, ?, ?)";
+        db.query(sql, [newCode, newName, newSyllabus, newProgression], (err, result) => {
+            if (err) {
+                console.error("Error inserting course: " + err);
+                return res.render("addcourses", { 
+                    errors: ["Kunde inte spara kursen"], 
+                    newCode, newName, newSyllabus, newProgression 
+                });
+            }
         // Skickas till startsidan efter att man fyllt i formulär korrekt
         res.redirect("/");
+    });
 });
 
 app.get("/about", (req, res) => {
