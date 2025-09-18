@@ -18,3 +18,5 @@ db.connect((err) => {
 
 // Exportera så att server.js kan använda
 module.exports = db;
+
+// SQL-fråga
